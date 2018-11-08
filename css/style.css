@@ -9,13 +9,17 @@
   color: #434343;
 }
 
-a.custom {
+footer a {
   color: #ececec;
 }
 
-a.custom:focus,
-a.custom:hover {
+footer a:focus,
+footer a:hover {
   color: #fff;
+}
+
+footer ul {
+  list-style-type: none;
 }
 
 .header {

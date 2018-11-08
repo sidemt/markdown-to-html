@@ -1,0 +1,108 @@
+/* variables */
+.background {
+  --editor-height: 500px;
+}
+
+/* styles */
+.background {
+  background-color: #B1B1B1;
+  color: #434343;
+}
+
+a.custom {
+  color: #ececec;
+}
+
+a.custom:focus,
+a.custom:hover {
+  color: #fff;
+}
+
+.header {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+.sub-header {
+  font-size: 1.5rem;
+  font-weight: 300;
+}
+
+#editor-container {
+  height: var(--editor-height);
+}
+
+#preview {
+  background-color: #EFEFEF;
+  height: var(--editor-height);
+  overflow: scroll;
+  padding: 10px 15px;
+  max-width:
+}
+
+#preview pre {
+  background-color: #dfdfdf;
+  border-radius: 2px;
+}
+
+#preview blockquote {
+    border-left: .25em solid #dfe2e5;
+    color: #6a737d;
+    padding: 0 1em;
+}
+
+#preview blockquote>:last-child {
+    margin-bottom: 0;
+}
+
+#preview blockquote>:first-child {
+    margin-top: 0;
+}
+
+#editor {
+  background-color: #fdfdfd;
+  height: var(--editor-height);
+  width: 100%;
+}
+
+#HTML {
+  background-color: #EFEFEF;
+  height: var(--editor-height);
+  width: 100%;
+}
+
+.description {
+  padding-top: 2rem;
+  text-align: center;
+}
+
+.footer {
+  padding: 2rem 0;
+  text-align: center;
+}
+
+/* Medium devices (tablets, less than 992px) */
+@media (max-width: 991.98px) {
+  /* variables */
+  .background {
+    --editor-height: 300px;
+  }
+  /* Styles */
+  .latter-col {
+    margin-top: 1rem;
+  }
+
+  #preview {
+    height: var(--editor-height);
+    overflow: scroll;
+  }
+  #editor-container {
+    height: var(--editor-height);
+  }
+  #HTML-container {
+    height: var(--editor-height);
+  }
+  .description {
+    padding-top: 3rem;
+  }
+}

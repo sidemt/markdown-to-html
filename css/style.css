@@ -20,6 +20,8 @@ footer a:hover {
 
 footer ul {
   list-style-type: none;
+  margin: 0;
+  padding: 0;
 }
 
 footer li {

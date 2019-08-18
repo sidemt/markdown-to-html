@@ -19,7 +19,7 @@ class ControlledInput extends React.Component {
     // preview
     document.getElementById("preview").innerHTML = marked(this.state.input);
     // html
-    document.getElementById("HTML").innerText = marked(this.state.input);
+    document.getElementById("HTML").value = marked(this.state.input);
     // editor
     return (
       <div>

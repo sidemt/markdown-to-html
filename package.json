@@ -17,9 +17,10 @@
     "url": "https://github.com/sidemt/markdown-to-html/issues"
   },
   "homepage": "https://github.com/sidemt/markdown-to-html#readme",
-  "dependencies": {
+  "dependencies": {},
+  "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^9.0.1",
-    "terser": "^4.1.4"
+    "babel-preset-react-app": "^3.1.2",
+    "terser": "^4.2.1"
   }
 }

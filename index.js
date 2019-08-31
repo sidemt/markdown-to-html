@@ -17,9 +17,11 @@ var ControlledInput = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (ControlledInput.__proto__ || Object.getPrototypeOf(ControlledInput)).call(this, props));
 
     _this.state = {
-      input: initialText
+      input: initialText,
+      breaksOption: true
     };
     _this.handleChange = _this.handleChange.bind(_this);
+    _this.toggleBreaksOption = _this.toggleBreaksOption.bind(_this);
     return _this;
   }
 
@@ -31,12 +33,21 @@ var ControlledInput = function (_React$Component) {
       });
     }
   }, {
+    key: "toggleBreaksOption",
+    value: function toggleBreaksOption() {
+      this.setState(function (state) {
+        return {
+          breaksOption: !state.breaksOption
+        };
+      });
+    }
+  }, {
     key: "render",
     value: function render() {
       // preview
-      document.getElementById("preview").innerHTML = marked(this.state.input);
+      document.getElementById("preview").innerHTML = marked(this.state.input, { breaks: this.state.breaksOption, gfm: true });
       // html
-      document.getElementById("HTML").value = marked(this.state.input);
+      document.getElementById("HTML").value = marked(this.state.input, { breaks: this.state.breaksOption, gfm: true });
       // editor
       return React.createElement(
         "div",
@@ -50,12 +61,61 @@ var ControlledInput = function (_React$Component) {
             onChange: this.handleChange
           },
           this.state.input
+        ),
+        React.createElement(
+          "div",
+          { className: "mb-3 mt-3" },
+          React.createElement(BreaksOptionSwitch, { breaksOption: this.state.breaksOption, onClick: this.toggleBreaksOption })
         )
       );
     }
   }]);
 
   return ControlledInput;
+}(React.Component);
+
+/**
+ * Component for toggle switch of line break setting
+ */
+
+
+var BreaksOptionSwitch = function (_React$Component2) {
+  _inherits(BreaksOptionSwitch, _React$Component2);
+
+  function BreaksOptionSwitch(props) {
+    _classCallCheck(this, BreaksOptionSwitch);
+
+    return _possibleConstructorReturn(this, (BreaksOptionSwitch.__proto__ || Object.getPrototypeOf(BreaksOptionSwitch)).call(this, props));
+  }
+
+  _createClass(BreaksOptionSwitch, [{
+    key: "render",
+    value: function render() {
+      var breaksOption = this.props.breaksOption;
+      return React.createElement(
+        "div",
+        { id: "break-option" },
+        React.createElement(
+          "span",
+          { id: "break-option-label" },
+          "<br> by 2spaces\xA0\xA0"
+        ),
+        React.createElement(
+          "label",
+          { className: "switch" },
+          breaksOption ? React.createElement("input", { type: "checkbox", checked: true }) : React.createElement("input", { type: "checkbox" }),
+          React.createElement("span", { className: "slider round", onClick: this.props.onClick })
+        ),
+        React.createElement(
+          "span",
+          { id: "break-option-label" },
+          "\xA0<br> by a line break "
+        )
+      );
+    }
+  }]);
+
+  return BreaksOptionSwitch;
 }(React.Component);
 
 ReactDOM.render(React.createElement(ControlledInput, null), document.getElementById("editor-container"));

@@ -27,7 +27,7 @@ class ControlledInput extends React.Component {
     const formattedHtml = html_beautify(rawHTML, {
       indent_size: 2
     });
-    console.log('formattedHtml', formattedHtml);
+
     // preview
     document.getElementById("preview").innerHTML = rawHTML;
     // html

@@ -31,7 +31,7 @@ footer li {
 }
 
 .header {
-  padding: 2rem 0;
+  padding: 1.5rem 0;
   text-align: center;
 }
 
@@ -40,6 +40,9 @@ footer li {
   font-weight: 300;
 }
 
+.display-4 {
+  font-size: 2.5rem;
+}
 #editor-container {
   height: var(--editor-height);
   margin-bottom: 50px;
@@ -166,6 +169,16 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 /* toggle switch end */
+
+.ads-container {
+  width: 100%;
+  min-width: 250px;
+}
+
+.ads-area {
+  width: 728px;
+  margin: 0 auto;
+}
 
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {

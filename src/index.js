@@ -25,9 +25,9 @@ class ControlledInput extends React.Component {
 
   render() {
     // preview
-    document.getElementById("preview").innerHTML = marked(this.state.input, { breaks: this.state.breaksOption, gfm: true });
+    document.getElementById("preview").innerHTML = marked.parse(this.state.input, { breaks: this.state.breaksOption, gfm: true });
     // html
-    document.getElementById("HTML").value = marked(this.state.input, { breaks: this.state.breaksOption, gfm: true });
+    document.getElementById("HTML").value = marked.parse(this.state.input, { breaks: this.state.breaksOption, gfm: true });
     // editor
     return (
       <div>

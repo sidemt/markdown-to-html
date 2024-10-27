@@ -4,7 +4,8 @@
   "description": "Markdown Editor/Previewer/HTML Converter   https://toolsiwant.net/markdown-to-html/",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel src -d . && terser index.js -o index.min.js"
   },
   "repository": {
     "type": "git",
@@ -17,10 +18,9 @@
     "url": "https://github.com/sidemt/markdown-to-html/issues"
   },
   "homepage": "https://github.com/sidemt/markdown-to-html#readme",
-  "dependencies": {},
   "devDependencies": {
-    "babel-cli": "^6.26.0",
-    "babel-preset-react-app": "^3.1.2",
-    "terser": "^4.2.1"
+    "@babel/cli": "latest",
+    "@babel/preset-react": "^7.25.9",
+    "terser": "latest"
   }
 }

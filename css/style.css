@@ -170,6 +170,16 @@ input:checked + .slider:before {
 }
 /* toggle switch end */
 
+.ads-container {
+  width: 100%;
+  min-width: 250px;
+}
+
+.ads-area {
+  width: 728px;
+  margin: 0 auto;
+}
+
 /* Medium devices (tablets, less than 992px) */
 @media (max-width: 991.98px) {
   /* variables */
